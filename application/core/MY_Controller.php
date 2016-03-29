@@ -60,7 +60,7 @@ class MY_Controller extends CI_Controller {
      */
     protected function authenticateAPIRequest($api_key_posted){
 	 $extected_key = "cs9a25c11ba50c1f63562d6a50f74bd885";
-	 if($extected_key != $api_post):
+	 if($extected_key != $api_key_posted):
 	     return false;
 	 endif;
 	 
