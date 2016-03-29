@@ -14,7 +14,7 @@
 class Api_test extends CI_Controller {
     //put your code here
     
-    var  $url ='http://127.0.0.1/im-client-site/v2/api/client/new';
+    var  $url ='http://ENTER-PATH/api/client/new';
     var  $key = "cs9a25c11ba50c1f63562d6a50f74bd885";
     
     function __construct() {
@@ -30,13 +30,13 @@ class Api_test extends CI_Controller {
 	$content['clientReference'] = "123";
 	$content['clientFirstName'] = "James";
 	$content['clientLastName'] = "John";
-	$content['clientUsername'] = "charles3@egbltd.co.uk";
+	$content['clientUsername'] = "charles3@example.co.uk";
 	$content['clientIsActve'] = 1;
 	$content['clientDateCreated'] = changeDateFormat('now', "Y-m-d");
 	$content['addNewClient'] = 1; 
 	$content['userReference'] = 'abc';
 
-	$content['clientPassword'] = "precious";
+	$content['clientPassword'] = "password";
 	//echo $this->url;
 	$response = $this->make_api_request($this->url, $content);
 	echo "<pre>";print_r($response);
