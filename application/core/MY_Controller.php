@@ -37,6 +37,8 @@ class MY_Controller extends CI_Controller {
     
     function __construct() {
 	parent::__construct();
+	
+	date_default_timezone_set('Europe/London');
 
 	$this->user_accessor =  new User_model(); 
 	
