@@ -167,9 +167,9 @@ class User_model extends CI_Model{
        endif;
       // print_r($UserDetails);
        // admin has access
-       if($currentUser->role_roleID == 1):
-           return true;
-       endif;
+//       if($currentUser->role_roleID == 1):
+//           return true;
+//       endif;
        
        // owner has access
        if($UserDetails->userID == $this->getSessionID()):         

@@ -14,7 +14,7 @@ class Users extends MY_Controller {
     function __construct() {
 	parent::__construct();
 	
-	$this->isAuthenticated();
+	//$this->isAuthenticated();
 	$this->user_accessor =  new User_model(); 
 	$this->document_accessor =  new Document_Model(); 
     }
@@ -48,6 +48,55 @@ class Users extends MY_Controller {
 	$data['page'] = 'user/view';
 	$this->load->view('template',$data);
 
+    }
+    
+    function dashboard(){
+        $client_id = 1;
+        $advisor_of_this_client = 1;
+        $data['show_main_nav'] = true; 
+	$data['page_title'] = "title";
+	$data['page'] = 'user/dashboard';
+	$this->load->view('template',$data);
+    }
+    
+    function application(){
+       
+        $client_id = 1;
+        $advisor_of_this_client = 1;
+        $data['show_main_nav'] = true; 
+	$data['page_title'] = "title";
+	$data['page'] = 'user/application';
+	$this->load->view('template',$data);
+    }
+    
+    function investmentOptions(){
+       
+        $client_id = 1;
+        $advisor_of_this_client = 1;
+        $data['show_main_nav'] = true; 
+	$data['page_title'] = "title";
+	$data['page'] = 'user/investment_options';
+	$this->load->view('template',$data);
+    }
+    
+    function pensionTransfer(){
+       
+        $client_id = 1;
+        $advisor_of_this_client = 1;
+        $data['show_main_nav'] = true; 
+	$data['page_title'] = "title";
+	$data['page'] = 'user/pension_transfer';
+	$this->load->view('template',$data);
+    }
+    
+    function contribution(){
+       
+        $client_id = 1;
+        $advisor_of_this_client = 1;
+        $data['show_main_nav'] = true; 
+	$data['page_title'] = "title";
+	$data['page'] = 'user/contributions';
+	$this->load->view('template',$data);
     }
     
  

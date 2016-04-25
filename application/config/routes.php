@@ -71,6 +71,11 @@ $route['user/(:any)/document/(:num)'] = "Document/view_documents/$1/$2";
  * users
  */
 $route['user/(:any)'] = "Users/index/$1";
+$route['dashboard'] = "users/dashboard";
+$route['applications'] = "users/application";
+$route['investment'] = "users/investmentOptions";
+$route['pension'] = "users/pensionTransfer";
+$route['contribution'] = "users/contribution";
 
 
 /**
