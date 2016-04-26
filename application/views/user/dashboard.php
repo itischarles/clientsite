@@ -2,7 +2,9 @@
 
 <div class="">
      <div class="col-sm-12">
-    <h3><b>Mr.</b>Michael jackson</h3> 
+         <?php// print_r($userDetails);?>
+         <h2><?php  echo (!empty($userDetails)? ucwords($userDetails->userTtitle ." ".$userDetails->userFirstName). " ".$userDetails->userLastName :'') ?></h2>
+    
      </div>
     <div class="col-sm-9">
 
@@ -52,9 +54,11 @@
         <hr>
         <h2><b>Applications</b></h2> 
         <hr>
-        <span class="glyphicon glyphicon-chevron-right"></span> <a href="#">Apply for SIPP  </a>
+        <span class="glyphicon glyphicon-chevron-right"></span> 
+        <a href="<?php echo base_url('users/application/sipp') ?>">Apply for SIPP  </a>
         <hr>
-        <span class="glyphicon glyphicon-chevron-right"></span> <a href="#">Apply for Pension </a>
+        <span class="glyphicon glyphicon-chevron-right"></span> 
+        <a href="#">Apply for Pension </a>
         <hr>
         <span class="glyphicon glyphicon-chevron-right"></span> <a href="#">Apply for ISA </a>
         <hr>

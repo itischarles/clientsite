@@ -86,3 +86,44 @@ ERROR - 2016-04-25 16:34:38 --> 404 Page Not Found: Contribution/index
 ERROR - 2016-04-25 18:28:37 --> 404 Page Not Found: Images/debit_icons.gif
 ERROR - 2016-04-25 18:29:31 --> 404 Page Not Found: Images/debit_icons.gif
 ERROR - 2016-04-25 18:29:33 --> 404 Page Not Found: Images/debit_icons.gif
+ERROR - 2016-04-25 14:23:10 --> Severity: Notice --> Undefined property: stdClass::$role_roleID /var/www/html/clientsite/application/views/includes/main_nav.php 27
+ERROR - 2016-04-25 14:23:10 --> Severity: Notice --> Undefined property: stdClass::$role_roleID /var/www/html/clientsite/application/views/includes/main_nav.php 42
+ERROR - 2016-04-25 14:23:10 --> Severity: Notice --> Undefined property: stdClass::$role_roleID /var/www/html/clientsite/application/views/includes/main_nav.php 42
+ERROR - 2016-04-25 14:26:15 --> Severity: Notice --> Undefined property: stdClass::$role_roleID /var/www/html/clientsite/application/views/includes/main_nav.php 28
+ERROR - 2016-04-25 14:26:15 --> Severity: Notice --> Undefined property: stdClass::$role_roleID /var/www/html/clientsite/application/views/includes/main_nav.php 43
+ERROR - 2016-04-25 14:26:15 --> Severity: Notice --> Undefined property: stdClass::$role_roleID /var/www/html/clientsite/application/views/includes/main_nav.php 43
+ERROR - 2016-04-25 15:10:20 --> Severity: Notice --> Undefined property: stdClass::$role_roleID /var/www/html/clientsite/application/controllers/Admin.php 34
+ERROR - 2016-04-25 15:10:26 --> Severity: Notice --> Undefined property: stdClass::$role_roleID /var/www/html/clientsite/application/controllers/Admin.php 118
+ERROR - 2016-04-25 15:10:52 --> Too many failed login attempted dected from userID1 127.0.0.1
+ERROR - 2016-04-25 15:27:40 --> Severity: Notice --> Undefined variable: userDetails /var/www/html/clientsite/application/controllers/Users.php 33
+ERROR - 2016-04-25 15:27:40 --> Severity: Notice --> Undefined variable: userDetails /var/www/html/clientsite/application/controllers/Users.php 33
+ERROR - 2016-04-25 15:27:40 --> Severity: Notice --> Undefined variable: userDetails /var/www/html/clientsite/application/controllers/Users.php 33
+ERROR - 2016-04-25 15:27:40 --> Severity: Notice --> Undefined variable: userDetails /var/www/html/clientsite/application/controllers/Users.php 33
+ERROR - 2016-04-25 15:27:40 --> Severity: Notice --> Undefined variable: userDetails /var/www/html/clientsite/application/controllers/Users.php 33
+ERROR - 2016-04-25 15:27:40 --> Severity: Notice --> Undefined variable: userDetails /var/www/html/clientsite/application/controllers/Users.php 33
+ERROR - 2016-04-25 15:27:40 --> Severity: Notice --> Undefined variable: userDetails /var/www/html/clientsite/application/controllers/Users.php 33
+ERROR - 2016-04-25 15:27:40 --> Severity: Notice --> Undefined variable: userDetails /var/www/html/clientsite/application/controllers/Users.php 33
+ERROR - 2016-04-25 15:27:40 --> Severity: Notice --> Undefined variable: userDetails /var/www/html/clientsite/application/controllers/Users.php 33
+ERROR - 2016-04-25 15:27:40 --> Severity: Notice --> Undefined variable: userDetails /var/www/html/clientsite/application/controllers/Users.php 33
+ERROR - 2016-04-25 15:27:40 --> Severity: Notice --> Undefined variable: userDetails /var/www/html/clientsite/application/controllers/Users.php 33
+ERROR - 2016-04-25 15:27:40 --> Severity: Notice --> Undefined variable: userDetails /var/www/html/clientsite/application/controllers/Users.php 33
+ERROR - 2016-04-25 15:27:40 --> Severity: Notice --> Undefined variable: userDetails /var/www/html/clientsite/application/controllers/Users.php 33
+ERROR - 2016-04-25 15:27:40 --> Severity: Notice --> Undefined variable: userDetails /var/www/html/clientsite/application/controllers/Users.php 33
+ERROR - 2016-04-25 15:27:40 --> Severity: Notice --> Undefined variable: userDetails /var/www/html/clientsite/application/controllers/Users.php 33
+ERROR - 2016-04-25 15:27:40 --> Severity: Notice --> Undefined variable: userDetails /var/www/html/clientsite/application/controllers/Users.php 33
+ERROR - 2016-04-25 15:27:40 --> Severity: Notice --> Undefined variable: userDetails /var/www/html/clientsite/application/controllers/Users.php 33
+ERROR - 2016-04-25 15:27:40 --> Severity: Notice --> Undefined variable: userDetails /var/www/html/clientsite/application/controllers/Users.php 33
+ERROR - 2016-04-25 15:27:40 --> Severity: Notice --> Undefined variable: userDetails /var/www/html/clientsite/application/controllers/Users.php 33
+ERROR - 2016-04-25 15:27:40 --> Severity: Notice --> Undefined variable: userDetails /var/www/html/clientsite/application/controllers/Users.php 33
+ERROR - 2016-04-25 15:27:40 --> Severity: Notice --> Undefined variable: userDetails /var/www/html/clientsite/application/controllers/Users.php 33
+ERROR - 2016-04-25 16:35:00 --> Too many failed login attempted dected from userID1 127.0.0.1
+ERROR - 2016-04-25 16:44:11 --> Severity: Notice --> Undefined variable: userUrl /var/www/html/clientsite/application/controllers/Users.php 56
+ERROR - 2016-04-25 21:43:05 --> 404 Page Not Found: User/asdf
+ERROR - 2016-04-25 21:44:35 --> 404 Page Not Found: User/asdf
+ERROR - 2016-04-25 21:44:36 --> 404 Page Not Found: User/asdf
+ERROR - 2016-04-25 21:44:37 --> 404 Page Not Found: User/asdf
+ERROR - 2016-04-25 21:44:44 --> 404 Page Not Found: User/1
+ERROR - 2016-04-25 17:16:13 --> Severity: 4096 --> Object of class stdClass could not be converted to string /var/www/html/clientsite/application/views/user/dashboard.php 58
+ERROR - 2016-04-25 17:16:14 --> Severity: 4096 --> Object of class stdClass could not be converted to string /var/www/html/clientsite/application/views/user/dashboard.php 58
+ERROR - 2016-04-25 21:59:22 --> 404 Page Not Found: Applications/index
+ERROR - 2016-04-25 22:16:42 --> 404 Page Not Found: Users/images

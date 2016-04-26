@@ -32,11 +32,11 @@ class Auth extends MY_Controller {
  
        $userDetails =  $this->user_accessor->getUserByID($this->currentUserID); 
       
-       if($userDetails->role_roleID ==1):
-           redirect(base_url('admin/search'));
-	 
-	    return false;
-       endif;
+//#       if($userDetails->role_roleID ==1):
+//           redirect(base_url('admin/search'));
+//	 
+//	    return false;
+//       endif;
        
        /**
         * @todo adviser redirect.
@@ -50,7 +50,8 @@ class Auth extends MY_Controller {
       
     function login(){
     
-	
+	//$this->user_accessor->_prep_password("123456");
+        
          if($this->input->post('login')):
             
               $this->form_validation->set_rules('username', 'Username', 'required');

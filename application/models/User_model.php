@@ -67,14 +67,16 @@ class User_model extends CI_Model{
      * @return array
      */
      function login($username, $password){
-     
+
       $loginMessage = ''; // would old any other custom login failed message. e.g locked account message
       
             $this->db->where(array('userUsername' => $username,                                 
                                    'userIsActive'=>1));
 
             $user_details = $this->db->get('users', 1)->row();           
+//            echo "users";
 //            print_r($user_details);
+//            EXIT();
 //	    return false;
             
             if($user_details):               
@@ -90,12 +92,12 @@ class User_model extends CI_Model{
 		    //login successful
 		    $this->addLoginHistory($user_details->userID, 1);
 		   
-		    if($this->_checkBlacklistedAccount($user_details->userID)=== false):
-			
-			log_message('error', "Too many failed login attempted dected from userID".$user_details->userID." ".  get_ip());
-       
-			return false;
-		    endif;
+//#		    if($this->_checkBlacklistedAccount($user_details->userID)=== false):
+//			
+//			log_message('error', "Too many failed login attempted dected from userID".$user_details->userID." ".  get_ip());
+//       
+//			return false;
+//		    endif;
 		    
 		    return true;
 		    
@@ -284,7 +286,7 @@ class User_model extends CI_Model{
 	
 	//Add a black list to account when they have attempted login for more than 5 times
 	
-	$this->_logBlackList($userID);
+	//#$this->_logBlackList($userID);
     }
     
     
@@ -351,6 +353,41 @@ class User_model extends CI_Model{
 	 */
     }
     
+     public function getClientByUserId($userID) {
+         
+        $this->db->where('userID', $userID);
+
+        return $this->db->get('clients')->result(); 
+          
+        
+    }
+    
+     function addNewApplication($data){
+      
+        $this->db->insert('applications',$data);
+        return $this->db->insert_id();
+     
+    }
+    
+    function isApplicationExists($data){
+        $this->db->where($data);
+        $res = $this->db->get("applications");
+        if($res){
+            return $res->result();
+        }
+        return false;
+    }
+    
+     function addNewTransfer($data){
+      
+        $this->db->insert('transfers',$data);
+        return $this->db->insert_id();
+     
+    }
+    
+    
+    
+
     
     
 }
