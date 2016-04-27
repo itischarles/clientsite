@@ -74,12 +74,33 @@ $route['user/(:any)'] = "Users/index/$1";
 $route['dashboard'] = "users/dashboard";
 
 $route['applications/(:any)'] = "users/application/$1";
-$route['investment'] = "users/investmentOptions";
-$route['investmentsave'] = "users/investmentOptionsSave";
-$route['pension'] = "users/pensionTransfer";
-$route['pensionsave'] = "users/pensionTransferSave";
-$route['contribution'] = "users/contribution";
-$route['contributionsave'] = "users/contributionSave";
+
+
+/**
+ * Investments
+ */
+$route['investment'] = "investments/investmentOptions";
+$route['investmentsave'] = "investments/investmentOptionsSave";
+
+
+
+
+/**
+ * transfers
+ */
+$route['pension'] = "transfers/pensionTransfer";
+$route['pensionsave'] = "transfers/pensionTransferSave";
+
+
+/**
+ * contributions
+ */
+$route['contribution'] = "contributions/contribution";
+$route['contributionsave'] = "contributions/contributionSave";
+
+
+
+
 
 
 /**

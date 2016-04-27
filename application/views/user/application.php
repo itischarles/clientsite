@@ -4,7 +4,9 @@
         
     </div>
     <div class="col-sm-9">
-        <h3><b>Application Reference: 12100180000392</b></h3>
+        <h3><b>Application Reference: <?php echo $applicationDetails->applicationReference; ?> 
+            <?php // echo (!empty($userDetails)? ucwords("$applicationReference"):'') ?>
+            </b></h3>
         <hr>
          <h2><b>Establishment</b></h2>
         <hr>
@@ -12,12 +14,22 @@
             
         <hr>
          <h3><b>Transfers</b> Please add any transfer details
-         <a href="<?php echo base_url("users/pensionTransfer/$app_id") ?>" class="btn btn-primary pull-right">Add</a>
+         <a href="<?php echo base_url("transfers/pensionTransfer/$app_id") ?>" class="btn btn-primary pull-right">Add</a>
          </h3>
+        <?php if($transfer): ?>
+        <?php foreach($transfer as $rows): ?>
+        <p> Reference number for transfer <?php echo $rows->transferReferrence; ?></p>
+        <?php endforeach; ?>
+        <?php endif; ?>
         <hr>
          <h3><b>New Contribution</b> Please add any Contribution details
-         <a href="<?php echo base_url("users/contribution/$app_id") ?>" class="btn btn-primary pull-right">Add</a>
+         <a href="<?php echo base_url("contributions/contribution/$app_id") ?>" class="btn btn-primary pull-right">Add</a>
          </h3>
+        <?php if($contribution): ?>
+        <?php foreach($contribution as $rows): ?>
+        <p>Reference number for contribution <?php echo $rows->contributionsReference; ?></p>
+        <?php endforeach; ?>
+        <?php endif; ?>
         <hr>
         <h3><b>Expression of wish </b>  Please add any beneficiary details
          <button type="submit" class="btn btn-default pull-right">Add</button></h3>
@@ -26,8 +38,13 @@
          <button type="submit" class="btn btn-default pull-right">Add</button></h3>
         <hr>
         <h3><b>Investment Instruction</b> Please add Investment details
-        <a href="<?php echo base_url("users/investmentOptions/$app_id") ?>" class="btn btn-primary pull-right">Add</a>
+        <a href="<?php echo base_url("investments/investmentOptions/$app_id") ?>" class="btn btn-primary pull-right">Add</a>
         </h3>
+        <?php if($investment): ?>
+        <?php foreach($investment as $rows): ?>
+        <p>Reference number for Investment <?php echo $rows->investmentReference; ?></p>
+        <?php endforeach; ?>
+        <?php endif; ?>
         <hr>
     </div>
     <div class="col-sm-3">

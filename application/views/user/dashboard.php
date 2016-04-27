@@ -26,12 +26,19 @@
         <h2><b>Applications</b></h2> 
         <hr style="display: block;margin-top: 0.5em;    margin-bottom: 0.5em;    margin-left: auto;
             margin-right: auto;    border-style: inset;    border-width: 2px;">
-        <a href="#">  <h4><b>Pension Applications</b> 321318521116354 started on 24th feb 2012 </h4></a>
+<!--         <h4><b>Pension Applications</b> 
+             321318521116354 started on 24th feb 2012 </h4>
+        <hr>-->
+        <?php if($applicationDetails):?>
+        <?php foreach($applicationDetails as $apps):?>
+       <h4><b><?php echo $apps->applicationType; ?> Applications</b> 
+                 <?php echo $apps->applicationReference; ?> started on <?php echo date("dS M Y", strtotime($apps->application_date)); ?> </h4>
+        <?php endforeach; ?>
+        <?php endif; ?>
         <hr>
-        <a href="#"> <h4><b>SIPP Applications</b> by 321318521116354 started on 6th mar 2012 </h4></a>
-        <hr>
-        <a href="#">  <h4><b>Pension Applications</b> 321318521116354 started on 6th mar 2012 </h4></a>
-        <hr>
+<!--        <h4><b>Pension Applications</b>
+            321318521116354 started on 6th mar 2012 </h4>
+        <hr>-->
 
 
 
