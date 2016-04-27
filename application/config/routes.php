@@ -71,6 +71,36 @@ $route['user/(:any)/document/(:num)'] = "Document/view_documents/$1/$2";
  * users
  */
 $route['user/(:any)'] = "Users/index/$1";
+$route['dashboard'] = "users/dashboard";
+
+$route['applications/(:any)'] = "users/application/$1";
+
+
+/**
+ * Investments
+ */
+$route['investment'] = "investments/investmentOptions";
+$route['investmentsave'] = "investments/investmentOptionsSave";
+
+
+
+
+/**
+ * transfers
+ */
+$route['pension'] = "transfers/pensionTransfer";
+$route['pensionsave'] = "transfers/pensionTransferSave";
+
+
+/**
+ * contributions
+ */
+$route['contribution'] = "contributions/contribution";
+$route['contributionsave'] = "contributions/contributionSave";
+
+
+
+
 
 
 /**

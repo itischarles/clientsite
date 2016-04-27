@@ -32,7 +32,7 @@ class Document_Model extends CI_Model {
     }
     
     function listDocuments($where){
-        $this->db->join('users','users.userID = document.users_userID','LEFT');
+        $this->db->join('users','users.userID = document.clientID','LEFT');
         $this->db->order_by('document.docDateAdded','DESC');
          return $this->db->where($where)
                 ->get('document')
