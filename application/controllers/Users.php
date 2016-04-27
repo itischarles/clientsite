@@ -103,6 +103,8 @@ class Users extends MY_Controller {
             $data1['applicationReference'] = $random_no;
             $data1['application_date'] = date("Y-m-d");
             $app_id = $this->user_accessor->addNewApplication($data1);
+            $appsDetails = $this->user_accessor->getApplicationDataById($app_id);
+            $data['applicationDetails'] =  $appsDetails[0];
         } else {
             $app_id = $is_app_exists[0]->applicationID;
             $data['applicationDetails'] =  $is_app_exists[0];

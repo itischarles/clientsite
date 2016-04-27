@@ -370,6 +370,21 @@ class User_model extends CI_Model {
         }
         return false;
     }
+    
+    /*
+     * function to get a record
+     * @params app_id
+     * @returns object or null
+     */
+
+    public function getApplicationDataById($app_id) {
+        $this->db->where('applicationID', $app_id);
+        $res = $this->db->get('applications');
+        if ($res) {
+            return $res->result();
+        }
+        return false;
+    }
 
 
    

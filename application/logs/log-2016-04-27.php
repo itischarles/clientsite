@@ -109,3 +109,7 @@ ERROR - 2016-04-27 21:08:54 --> 404 Page Not Found: Users/investmentOptions
 ERROR - 2016-04-27 21:08:55 --> 404 Page Not Found: Users/investmentOptions
 ERROR - 2016-04-27 21:09:33 --> 404 Page Not Found: Users/investmentOptions
 ERROR - 2016-04-27 21:09:34 --> 404 Page Not Found: Users/investmentOptions
+ERROR - 2016-04-27 16:59:13 --> Severity: Notice --> Undefined variable: applicationDetails /var/www/html/clientsite/application/views/user/application.php 7
+ERROR - 2016-04-27 16:59:13 --> Severity: Notice --> Trying to get property of non-object /var/www/html/clientsite/application/views/user/application.php 7
+ERROR - 2016-04-27 17:11:17 --> Severity: Notice --> Trying to get property of non-object /var/www/html/clientsite/application/views/user/application.php 7
+ERROR - 2016-04-27 17:12:02 --> Severity: Notice --> Trying to get property of non-object /var/www/html/clientsite/application/views/user/application.php 7
