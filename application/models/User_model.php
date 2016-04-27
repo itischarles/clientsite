@@ -385,8 +385,19 @@ class User_model extends CI_Model{
      
     }
     
+    function addNewInvestment($data){
+      
+        $this->db->insert('investment_intructions',$data);
+        return $this->db->insert_id();
+     
+    }
     
-    
+    function addNewContribution($data){
+      
+        $this->db->insert('contributions',$data);
+        return $this->db->insert_id();
+     
+    }
 
     
     

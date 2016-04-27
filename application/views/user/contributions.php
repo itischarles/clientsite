@@ -4,15 +4,22 @@
     <h1 class="text-center"><b></b>Contribution</h1> 
     <hr style="display: block;margin-top: 0.5em;    margin-bottom: 0.5em;    margin-left: auto;
         margin-right: auto;    border-style: inset;    border-width: 2px;">
+    
+    <form  role="form" action='<?php echo base_url("contributionsave") ?>' method="post">
+      
+    <input type="hidden" name="contributionID" class="form-control"> 
+    <input type="hidden" name="applicationID" class="form-control" value="<?php echo @$app_id;?>"> 
+   
+    
+       
     <div class="col-sm-12">
-
         <div class="col-sm-3"><h3>How do you wish to fund </h3> </div>
         <div class="col-sm-9">
             <div class="radio">
-                <label><input type="radio" name="optradio">Lamp sum investment</label>
+                <label><input type="radio" name="fund_type" value="Lamp sum investment">Lamp sum investment</label>
             </div>
             <div class="radio">
-                <label><input type="radio" name="optradio">Regular Contribution</label>
+                <label><input type="radio" name="fund_type" value="Regular Contribution">Regular Contribution</label>
             </div>
             <div class="col-sm-12">
                 <p>Please tick all options that applay </p>
@@ -26,7 +33,7 @@
         <div class="col-sm-3"><h3>Amount of lump sum investment(£)</h3> </div>
         <div class="col-sm-9">
             <div class="form-group col-sm-6" style="padding-top: 20px;">
-                <input type="text" class="form-control" >
+                <input type="text" name="lump_sum_amount" class="form-control" >
 
             </div>
             <div class="col-sm-12">
@@ -42,7 +49,7 @@
         <div class="col-sm-3"><h3>Amount of Regular Contribution(£)</h3> </div>
         <div class="col-sm-9">
             <div class="form-group col-sm-6" style="padding-top: 20px;">
-                <input type="text" class="form-control">
+                <input type="text" name="regular_amount" class="form-control">
 
             </div>
         </div>
@@ -53,13 +60,13 @@
         <div class="col-sm-3"><h3>Frequency of Regular Contribution(£)</h3> </div>
         <div class="col-sm-9">
             <div class="radio">
-                <label><input type="radio" name="optradio">Monthly</label>
+                <label><input type="radio" name="frequency_regular" value="Monthly">Monthly</label>
             </div>
             <div class="radio">
-                <label><input type="radio" name="optradio">Quarterly </label>
+                <label><input type="radio" name="frequency_regular" value="Quarterly">Quarterly </label>
             </div>
             <div class="radio">
-                <label><input type="radio" name="optradio">Annually</label>
+                <label><input type="radio" name="frequency_regular" value="Annually">Annually</label>
             </div>
             <div class="col-sm-12">
                 <p>Please complete the Direct Debit Mandate below to make regular contributions</p>
@@ -80,7 +87,7 @@
         <div class="col-sm-3"><h3>Account Holder(s)</h3> </div>
         <div class="col-sm-9">
             <div class="form-group col-sm-6" style="padding-top: 20px;">
-                <input type="text" class="form-control">
+                <input type="text" name="account_holder" class="form-control">
             </div>
         </div>
     </div>
@@ -88,7 +95,7 @@
         <div class="col-sm-3"><h3>Bank/Building Society Account Number</h3> </div>
         <div class="col-sm-9">
             <div class="form-group col-sm-6" style="padding-top: 20px;">
-                <input type="text" class="form-control">
+                <input type="text" name="society_account_holder" class="form-control">
             </div>
         </div>
     </div>
@@ -96,7 +103,7 @@
         <div class="col-sm-3"><h3>Sort Code</h3> </div>
         <div class="col-sm-9">
             <div class="form-group col-sm-6" style="padding-top: 20px;">
-                <input type="text" class="form-control">
+                <input type="text" name="sorrt_code" class="form-control">
             </div>
             <div class="col-sm-12">
             0 to 6 max characters
@@ -104,10 +111,11 @@
         </div>
     </div>
      <div class="col-sm-12">
-        <div class="col-sm-3"><h3>Name and full postal address of your Bank or Building Society </h3> </div>
+        <div class="col-sm-3">
+            <h3>Name and full postal address of your Bank or Building Society </h3> </div>
         <div class="col-sm-9">
             <div class="form-group col-sm-6" style="padding-top: 20px;">
-                <textarea class="form-control"s ></textarea>
+                <textarea class="form-control" name="postal_address" ></textarea>
                            </div>
             <div class="col-sm-9">
                 <p>Instructions to your Bank or Building Society: </p>
@@ -134,9 +142,9 @@
 
  
     <div class="form-group col-sm-offset-3">  
-        <button type="button" class="btn btn-primary btn-lg">Save</button>
+        <button type="submit" class="btn btn-primary btn-lg">Save</button>
     </div>
 
-
+    </form>
 </div>
 

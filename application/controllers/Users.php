@@ -78,6 +78,7 @@ class Users extends MY_Controller {
 
         $data1['applicationType'] = $type;
         $data1['clientID'] = $clientID;
+        $data1['application_date'] = date("Y-m-d");
 
         $is_app_exists = $this->user_accessor->isApplicationExists($data1);
 
@@ -108,7 +109,7 @@ class Users extends MY_Controller {
     }
 
     public function pensionTransferSave() {
-        
+
         //  if ($this->input->post()) {
         $data['applicationID'] = $this->input->post('applicationID');
         $data['pensionProvider'] = $this->input->post('pensionProvider');
@@ -118,24 +119,64 @@ class Users extends MY_Controller {
         redirect("applications/sipp");
     }
 
-    function contribution() {
+    function investmentOptions($app_id) {
 
-        $client_id = 1;
-        $advisor_of_this_client = 1;
+        $userUrl = (empty($userUrl) ? $this->currentUserBaseUrl : $userUrl);
+        $data['userDetails'] = $userDetails = $this->user_accessor->getUserByBaseurl($userUrl);
+
+        $data['app_id'] = $app_id;
+        $data['show_main_nav'] = true;
+        $data['page_title'] = "title";
+        $data['page'] = 'user/investment_options';
+        $this->load->view('template', $data);
+    }
+
+    function investmentOptionsSave() {
+
+        $random_no = rand(11111, 99999);
+
+        $data['applicationID'] = $this->input->post('applicationID');
+        $data['investment_options'] = $this->input->post('investment_options');
+        $data['percentage_of_investment'] = $this->input->post('percentage_of_investment');
+        $data['target_date'] = date("Y-m-d", strtotime("now")); //$this->input->post('target_date');
+        $data['investmentReference'] = $random_no;
+
+        $this->user_accessor->addNewInvestment($data);
+        redirect("applications/sipp");
+    }
+
+    function contribution($app_id) {
+
+        $userUrl = (empty($userUrl) ? $this->currentUserBaseUrl : $userUrl);
+        $data['userDetails'] = $userDetails = $this->user_accessor->getUserByBaseurl($userUrl);
+
+        $data['app_id'] = $app_id;
         $data['show_main_nav'] = true;
         $data['page_title'] = "title";
         $data['page'] = 'user/contributions';
         $this->load->view('template', $data);
     }
 
-    function investmentOptions() {
+    function contributionSave() {
+        
+        $random_no = rand(11111, 99999);
+        
+        $data['applicationID'] = $this->input->post('applicationID');
+        $data['fund_type'] = $this->input->post('fund_type');
+        $data['lump_sum_amount'] = $this->input->post('lump_sum_amount');
+        $data['regular_amount'] = $this->input->post('regular_amount');
+        $data['frequency_regular'] = $this->input->post('frequency_regular');
+        $data['account_holder'] = $this->input->post('account_holder');
+        $data['society_account_holder'] = $this->input->post('society_account_holder');
+        $data['sorrt_code'] = $this->input->post('sorrt_code');
+        $data['postal_address'] = $this->input->post('postal_address');
+        $data['contributionsReference'] =$random_no;
 
-        $client_id = 1;
-        $advisor_of_this_client = 1;
-        $data['show_main_nav'] = true;
-        $data['page_title'] = "title";
-        $data['page'] = 'user/investment_options';
-        $this->load->view('template', $data);
+
+        $this->user_accessor->addNewContribution($data);
+      
+        
+        redirect("applications/sipp");
     }
 
 }

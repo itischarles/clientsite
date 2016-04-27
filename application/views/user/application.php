@@ -16,7 +16,7 @@
          </h3>
         <hr>
          <h3><b>New Contribution</b> Please add any Contribution details
-         <a href="<?php echo base_url('users/contribution') ?>" class="btn btn-primary pull-right">Add</a>
+         <a href="<?php echo base_url("users/contribution/$app_id") ?>" class="btn btn-primary pull-right">Add</a>
          </h3>
         <hr>
         <h3><b>Expression of wish </b>  Please add any beneficiary details
@@ -26,7 +26,7 @@
          <button type="submit" class="btn btn-default pull-right">Add</button></h3>
         <hr>
         <h3><b>Investment Instruction</b> Please add Investment details
-        <a href="<?php echo base_url('users/investmentOptions') ?>" class="btn btn-primary pull-right">Add</a>
+        <a href="<?php echo base_url("users/investmentOptions/$app_id") ?>" class="btn btn-primary pull-right">Add</a>
         </h3>
         <hr>
     </div>

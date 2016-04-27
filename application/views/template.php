@@ -71,5 +71,16 @@
   <script type="text/javascript" src="<?php echo base_url('third_party/jquery-ui-1.11.4.custom/jquery-ui.min.js') ?>"></script>
    <script type="text/javascript" src="<?php echo base_url('third_party/bootstrap/js/bootstrap.min.js') ?>"></script>
   <script type="text/javascript" src="<?php echo base_url('js/script.js') ?>"></script>
+   <script>
+  $(function(){
+    
+    $('#target_dates').datepicker({
+        dateFormat: 'dd-mm-yy',
+        altField: '#thealtdate',
+        altFormat: 'yy-mm-dd'
+    });
+    
+});
+  </script>
 </body>
 </html>

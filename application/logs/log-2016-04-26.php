@@ -209,3 +209,4 @@ ERROR - 2016-04-26 15:42:07 --> Severity: Warning --> Missing argument 1 for Use
 ERROR - 2016-04-26 15:42:07 --> Severity: Notice --> Undefined variable: type /var/www/html/clientsite/application/controllers/Users.php 79
 ERROR - 2016-04-26 20:12:13 --> 404 Page Not Found: Applications/index
 ERROR - 2016-04-26 20:17:42 --> 404 Page Not Found: Users/images
+ERROR - 2016-04-26 20:41:42 --> 404 Page Not Found: Users/images

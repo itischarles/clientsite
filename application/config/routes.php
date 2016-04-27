@@ -75,9 +75,11 @@ $route['dashboard'] = "users/dashboard";
 
 $route['applications/(:any)'] = "users/application/$1";
 $route['investment'] = "users/investmentOptions";
+$route['investmentsave'] = "users/investmentOptionsSave";
 $route['pension'] = "users/pensionTransfer";
 $route['pensionsave'] = "users/pensionTransferSave";
 $route['contribution'] = "users/contribution";
+$route['contributionsave'] = "users/contributionSave";
 
 
 /**
