@@ -25,8 +25,7 @@ class Transfers extends MY_Controller {
         $this->transfer_accessor = new Transfer_model();
     }
 
-    
-     function pensionTransfer($app_id) {
+    function pensionTransfer($app_id) {
 
         $userUrl = (empty($userUrl) ? $this->currentUserBaseUrl : $userUrl);
         $data['userDetails'] = $userDetails = $this->user_accessor->getUserByBaseurl($userUrl);
@@ -40,13 +39,27 @@ class Transfers extends MY_Controller {
 
     public function pensionTransferSave() {
 
-        //  if ($this->input->post()) {
-        $data['applicationID'] = $this->input->post('applicationID');
-        $data['pensionProvider'] = $this->input->post('pensionProvider');
-        $data['transferReferrence'] = $this->input->post('transferReferrence');
-        $data['approximateValue'] = $this->input->post('approximateValue');
-        $this->transfer_accessor->addNewTransfer($data);
-        redirect("applications/sipp");
+        $this->load->library('form_validation');
+        $app_id = $this->input->post('applicationID');
+
+        if ($this->input->post('submit')):
+            $this->form_validation->set_rules('pensionProvider', ' Pension Provider', 'required');
+            $this->form_validation->set_rules('transferReferrence', 'Transfer Referrence', 'required');
+            $this->form_validation->set_rules('approximateValue', 'Approximate Value', 'required');
+
+            if ($this->form_validation->run()):
+                $data['applicationID'] = $app_id;
+                $data['pensionProvider'] = $this->input->post('pensionProvider');
+                $data['transferReferrence'] = $this->input->post('transferReferrence');
+                $data['approximateValue'] = $this->input->post('approximateValue');
+                //  if ($this->input->post()) {
+                $this->transfer_accessor->addNewTransfer($data);
+                redirect("applications/sipp");
+            else:
+                $this->pensionTransfer($app_id);
+            endif;
+
+        endif;
     }
 
 }

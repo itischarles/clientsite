@@ -13,8 +13,8 @@ class Investment_model extends CI_Model {
     function __construct() {
         parent::__construct();
     }
-    
-     /*
+
+    /*
      * function to add new record to Investment table
      * @params data
      * @returns object or null
@@ -26,8 +26,7 @@ class Investment_model extends CI_Model {
         return $this->db->insert_id();
     }
 
-    
-     /*
+    /*
      * function to get all records of Investment table
      * @params app_id
      * @returns object or null
@@ -40,6 +39,16 @@ class Investment_model extends CI_Model {
             return $res->result();
         }
         return false;
+    }
+
+    function IMOptimumGrowthexists($key) {
+        $this->db->where('rolekey', $key);
+        $query = $this->db->get('roles');
+        if ($query->num_rows() > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
