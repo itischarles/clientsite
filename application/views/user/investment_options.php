@@ -12,7 +12,16 @@
     <input type="hidden" name="applicationID" class="form-control" value="<?php echo @$app_id;?>"> 
   
     <div class="col-sm-12">
+        <?php $msg = $this->session->flashdata("flash_msg");
+        if($msg != ''){?>
+        <div class="alert alert-warning alert-dismissible" role="alert"><?php 
         
+            echo $msg;
+        
+        ?>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <?php } ?>
         <div class="row">
             <div class="col-sm-3"><h3>Investment Options <b style="color: red;">*</b></h3> </div>
             <div class="col-sm-9">
@@ -27,6 +36,7 @@
                 </div>
                 <span class="text-danger"><?php echo form_error('investment_options'); ?></span>
                 <p>Please select the investment portfolio you require(you can change this at any time)</p> </p>
+            
             </div>
 
         </div>
@@ -54,7 +64,8 @@
              <div class="row">
                 <div class="form-group  col-sm-4">
                   
-                    <label> <input id="target_dates" name="target_dates" value="<?php echo set_value('target_dates'); ?> "  class="form-control" ></label>
+                    <input type="text" id="target_dates" name="target_dates" value="<?php echo set_value('target_dates'); ?> "  class="form-control" >
+                  
                     <span class="text-danger"><?php echo form_error('target_dates'); ?></span>
                   
                  

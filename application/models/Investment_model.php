@@ -41,9 +41,9 @@ class Investment_model extends CI_Model {
         return false;
     }
 
-    function IMOptimumGrowthexists($key) {
-        $this->db->where('rolekey', $key);
-        $query = $this->db->get('roles');
+    function IMOptimumGrowthexists($wdata) {
+        $this->db->where($wdata);
+        $query = $this->db->get('investment_intructions');
         if ($query->num_rows() > 0) {
             return true;
         } else {

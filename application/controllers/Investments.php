@@ -55,23 +55,46 @@ class Investments extends MY_Controller {
 
             $this->form_validation->set_rules('investment_options', 'Investment options', 'required');
             $this->form_validation->set_rules('percentage_of_investment', 'Percentage of investment', 'required');
-            $this->form_validation->set_rules('target_date', 'Target date', 'required');
-        
-        
+            //  $this->form_validation->set_rules('target_date', 'Target date', 'required');
+            
+            $w_data['applicationID'] = $app_id;
+            
+            $inv_opt = $this->input->post('investment_options');
+            switch($inv_opt){
+                case "IM Optimum Growth":
+                    $w_data['investment_options'] = "IM Optimum Growth";
+                    break;
+                case "IM Optimum Income":
+                    $w_data['investment_options'] = "IM Optimum Income";
+                    break;
+                case "IM Optimum Growth & Income":
+                    $w_data['investment_options'] = "IM Optimum Growth & Income";
+                    break;
+            };
+
+            $dup = $this->investment_accessor->IMOptimumGrowthexists($w_data);
+            
+            if($dup){
+                $this->session->set_flashdata("flash_msg", "Selected investment option already exists!");
+                redirect("investment/$app_id");
+            }
+            
             if ($this->form_validation->run()):
-                $data['applicationID'] =$app_id;
-                $data['investment_options'] = $this->input->post('investment_options');
+                $data['applicationID'] = $app_id;
+                $data['investment_options'] = $inv_opt;
                 $data['percentage_of_investment'] = $this->input->post('percentage_of_investment');
-                  $data['target_date'] = date("Y-m-d", strtotime("now")); //$this->input->post('target_date');
-              //  $data['target_date'] = $this->input->post('target_date');
+                $tar_date = $this->input->post('target_dates');
+                $data['target_date'] = date("Y-m-d", strtotime($tar_date));
                 $data['investmentReference'] = $random_no;
 
+                
+
+                
+                
                 $this->investment_accessor->addNewInvestment($data);
                 redirect("applications/sipp");
             else:
                 $this->investmentOptions($app_id);
-
-
 
             endif;
         endif;
