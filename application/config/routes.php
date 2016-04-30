@@ -79,7 +79,7 @@ $route['applications/(:any)'] = "users/application/$1";
 /**
  * Investments
  */
-$route['investment'] = "investments/investmentOptions";
+$route['investment/(:num)'] = "investments/investmentOptions/$1";
 $route['investmentsave'] = "investments/investmentOptionsSave";
 
 
@@ -95,7 +95,7 @@ $route['pensionsave'] = "transfers/pensionTransferSave";
 /**
  * contributions
  */
-$route['contribution'] = "contributions/contribution";
+$route['contribution/(:num)'] = "contributions/contribution/$1";
 $route['contributionsave'] = "contributions/contributionSave";
 
 

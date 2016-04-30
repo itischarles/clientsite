@@ -30,7 +30,7 @@
             <div class="col-sm-3"><h3>How do you wish to fund </h3> </div>
             <div class="col-sm-9">
                 <div class="radio">
-                    <label><input type="radio" name="fund_type" value="Lamp sum investment">Lamp sum investment</label>
+                    <label><input type="radio" name="fund_type" value="Lump sum investment">Lump sum investment</label>
                 </div>
                 <div class="radio">
                     <label><input type="radio" name="fund_type" value="Regular Contribution">Regular Contribution</label>
