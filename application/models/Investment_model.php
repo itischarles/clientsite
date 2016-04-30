@@ -40,8 +40,14 @@ class Investment_model extends CI_Model {
         }
         return false;
     }
+    
+    /*
+     * function to Check the Selected investment option already exists
+     * @params wdata
+     * @returns object or null
+     */
 
-    function IMOptimumGrowthexists($wdata) {
+    function investmentOptionsExists($wdata) {
         $this->db->where($wdata);
         $query = $this->db->get('investment_intructions');
         if ($query->num_rows() > 0) {
@@ -51,4 +57,5 @@ class Investment_model extends CI_Model {
         }
     }
 
+  
 }

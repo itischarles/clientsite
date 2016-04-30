@@ -55,7 +55,7 @@ class Investments extends MY_Controller {
 
             $this->form_validation->set_rules('investment_options', 'Investment options', 'required');
             $this->form_validation->set_rules('percentage_of_investment', 'Percentage of investment', 'required');
-            //  $this->form_validation->set_rules('target_date', 'Target date', 'required');
+          
             
             $w_data['applicationID'] = $app_id;
             
@@ -72,7 +72,8 @@ class Investments extends MY_Controller {
                     break;
             };
 
-            $dup = $this->investment_accessor->IMOptimumGrowthexists($w_data);
+            $dup = $this->investment_accessor->investmentOptionsExists($w_data);
+          
             
             if($dup){
                 $this->session->set_flashdata("flash_msg", "Selected investment option already exists!");
