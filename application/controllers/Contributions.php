@@ -55,12 +55,32 @@ class Contributions extends MY_Controller {
             $this->form_validation->set_rules('society_account_holder', 'Society account holder', 'required');
             $this->form_validation->set_rules('sorrt_code', 'Sorrt code', 'required');
             $this->form_validation->set_rules('postal_address', 'Postal address', 'required');
-            $this->form_validation->set_rules('contributionsReference', 'contributionsReference', 'required');
+          
+             $w_data['applicationID'] = $app_id;
+            
+            $fund_type = $this->input->post('fund_type');
+            switch($fund_type){
+                case "Lamp sum investment":
+                    $w_data['fund_type'] = "Lamp sum investment";
+                    break;
+                case "Regular Contribution":
+                    $w_data['fund_type'] = "Regular Contribution";
+                    break;
+               
+            };
+            
+              $dup = $this->contribution_accessor->fundTypeExists($w_data);
+              
+              if($dup){
+                $this->session->set_flashdata("flash_msg", "Selected fund type already exists!");
+                redirect("contribution/$app_id");
+            }
+            
 
             if ($this->form_validation->run()):
 
                 $data['applicationID'] = $app_id;
-                $data['fund_type'] = $this->input->post('fund_type');
+                $data['fund_type'] = $fund_type;
                 $data['lump_sum_amount'] = $this->input->post('lump_sum_amount');
                 $data['regular_amount'] = $this->input->post('regular_amount');
                 $data['frequency_regular'] = $this->input->post('frequency_regular');
@@ -70,6 +90,7 @@ class Contributions extends MY_Controller {
                 $data['postal_address'] = $this->input->post('postal_address');
                 $data['contributionsReference'] = $random_no;
                 $this->contribution_accessor->addNewContribution($data);
+               
                 redirect("applications/sipp");
             else:
                 $this->contribution($app_id);

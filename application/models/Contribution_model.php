@@ -41,5 +41,21 @@ class Contribution_model extends CI_Model {
         }
         return false;
     }
+    
+    /*
+     * function to Check the Selected  Fund type already exists
+     * @params wdata
+     * @returns object or null
+     */
+
+    function fundTypeExists($wdata) {
+        $this->db->where($wdata);
+        $query = $this->db->get('contributions');
+        if ($query->num_rows() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 }

@@ -13,6 +13,20 @@
 
 
         <div class="col-sm-12">
+            <?php $msg = $this->session->flashdata("flash_msg");
+        if($msg != ''){?>
+        <div class="alert alert-warning alert-dismissible" role="alert"><?php 
+        
+            echo $msg;
+        
+        ?>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <?php } ?>
+            
+        </div>
+        <div class="col-sm-12">
+            
             <div class="col-sm-3"><h3>How do you wish to fund </h3> </div>
             <div class="col-sm-9">
                 <div class="radio">
