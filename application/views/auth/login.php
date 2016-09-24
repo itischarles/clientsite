@@ -37,7 +37,7 @@
                 
         
            <div class="input-group has-error has-feedback">
-            <?php echo form_label('Passord', 'password'); ?>
+            <?php echo form_label('Password', 'password'); ?>
             <?php
                 $data = array(
                           'name'        => 'password',
